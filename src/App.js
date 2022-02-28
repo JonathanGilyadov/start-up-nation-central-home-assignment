@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import { Fragment, useState } from "react";
+import "./App.css";
+import Select from "./components/Select";
 
-function App() {
+const options = [
+  { label: "option 1", value: 1 },
+  { label: "option 2", value: 2 },
+  { label: "option 3", value: 3 },
+  { label: "option 4", value: 4 },
+  { label: "option 5", value: 5 },
+];
+
+const App = () => {
+  const [selected, setSelected] = useState(null);
+
+  const onSelect = (selected) => {
+    setSelected(selected);
+    // alert(selected)
+  };
+
+  const placeholder =
+    selected &&
+    selected.map(
+      (value) => `${options.find((option) => option.value === value).label}, `
+    );
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* {selected &&
+        selected.map((value) => (
+          <label key={value}>
+            {options.find((option) => option.value === value).label},{" "}
+          </label>
+        ))} */}
+
+      <Select
+        {...{ options, onSelect, selected, placeholder }}
+        isMulti
+        isSearchable
+      />
     </div>
   );
-}
+};
 
 export default App;

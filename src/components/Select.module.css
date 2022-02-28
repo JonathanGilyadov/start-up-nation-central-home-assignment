@@ -1,0 +1,21 @@
+.select {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.open_select {
+  cursor: pointer;
+  background-color: #696d7d;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.options {
+  position: relative;
+  margin-top: 19px;
+  margin: auto;
+  background-color: #8fc0a9;
+  padding: 5px;
+  border-radius: 5px;
+}
