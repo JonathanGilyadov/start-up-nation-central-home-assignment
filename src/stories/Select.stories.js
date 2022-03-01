@@ -6,7 +6,7 @@ const options = [
   { label: "option 2", value: 2 },
   { label: "option 3", value: 3 },
   { label: "option 4", value: 4 },
-  { label: "option 5", value: 5 },
+  { label: "option 6", value: 6 },
 ];
 
 export default {
