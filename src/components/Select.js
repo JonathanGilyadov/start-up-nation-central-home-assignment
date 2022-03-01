@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Option from "./Option";
 import Search from "./Search";
 import styles from "./Select.module.css";
+import PropTypes from "prop-types";
 
 const Select = (props) => {
   const { options, onSelect, selected, isMulti, placeholder, isSearchable } =
@@ -74,6 +75,15 @@ const Select = (props) => {
       </div>
     </div>
   );
+};
+
+Select.prototype = {
+  isMulti: PropTypes.bool,
+  isSearchable: PropTypes.bool,
+  onSelect: PropTypes.func,
+  options: PropTypes.object,
+  selected: PropTypes.array,
+  placeholder: PropTypes.string || PropTypes.array,
 };
 
 export default Select;
